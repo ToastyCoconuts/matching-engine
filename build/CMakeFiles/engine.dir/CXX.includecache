@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/toastycoconuts/matching-engine/src/main.cpp
+order_book.hpp
+/home/toastycoconuts/matching-engine/src/order_book.hpp
+iostream
+-
+
+/home/toastycoconuts/matching-engine/src/order.hpp
+cstdint
+-
+string
+-
+
+/home/toastycoconuts/matching-engine/src/order_book.hpp
+order.hpp
+/home/toastycoconuts/matching-engine/src/order.hpp
+map
+-
+deque
+-
+vector
+-
+iostream
+-
+
