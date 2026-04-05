@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/toastycoconuts/matching-engine/src/main.cpp
-order_book.hpp
-/home/toastycoconuts/matching-engine/src/order_book.hpp
-iostream
--
-
 /home/toastycoconuts/matching-engine/src/order.hpp
 cstdint
 -
@@ -28,6 +22,14 @@ deque
 vector
 -
 unordered_map
+-
+iostream
+-
+
+/home/toastycoconuts/matching-engine/tests/test_order_book.cpp
+../src/order_book.hpp
+/home/toastycoconuts/matching-engine/src/order_book.hpp
+cassert
 -
 iostream
 -

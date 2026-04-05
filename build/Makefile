@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
 # Target rules for targets named engine
 
 # Build rule for target.
@@ -150,6 +163,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+tests/test_order_book.o: tests/test_order_book.cpp.o
+
+.PHONY : tests/test_order_book.o
+
+# target to build an object file
+tests/test_order_book.cpp.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/test_order_book.cpp.o
+.PHONY : tests/test_order_book.cpp.o
+
+tests/test_order_book.i: tests/test_order_book.cpp.i
+
+.PHONY : tests/test_order_book.i
+
+# target to preprocess a source file
+tests/test_order_book.cpp.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/test_order_book.cpp.i
+.PHONY : tests/test_order_book.cpp.i
+
+tests/test_order_book.s: tests/test_order_book.cpp.s
+
+.PHONY : tests/test_order_book.s
+
+# target to generate assembly for a file
+tests/test_order_book.cpp.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/test_order_book.cpp.s
+.PHONY : tests/test_order_book.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... tests"
 	@echo "... engine"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... tests/test_order_book.o"
+	@echo "... tests/test_order_book.i"
+	@echo "... tests/test_order_book.s"
 .PHONY : help
 
 

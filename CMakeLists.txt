@@ -17,6 +17,19 @@ target_compile_options(engine PRIVATE
     -pthread
 )
 
+add_executable(tests
+    tests/test_order_book.cpp
+)
+
+target_compile_options(tests PRIVATE
+    -O2
+    -march=native
+    -Wall
+    -Wextra
+    -pthread
+)
+
+
 target_link_libraries(engine PRIVATE pthread)
 
 # Enable thread sanitizer for debug builds
